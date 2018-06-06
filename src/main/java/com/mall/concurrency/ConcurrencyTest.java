@@ -37,7 +37,6 @@ public class ConcurrencyTest {
         executorService.shutdown();
         countDownLatch.await();
         log.info("count : " + count);
-        System.out.println("-------------count :" + count);
     }
 
     private static void add(){
