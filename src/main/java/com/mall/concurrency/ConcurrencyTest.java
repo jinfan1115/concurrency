@@ -3,7 +3,10 @@ package com.mall.concurrency;
 import com.mall.concurrency.annoations.NoThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 
 @Slf4j
 @NoThreadSafe
@@ -34,6 +37,7 @@ public class ConcurrencyTest {
         executorService.shutdown();
         countDownLatch.await();
         log.info("count : " + count);
+        System.out.println("-------------count :" + count);
     }
 
     private static void add(){
